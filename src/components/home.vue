@@ -58,7 +58,7 @@ export default {
   mounted() {
     var url = new URL(window.location.href);
     var c = url.searchParams.get('code');
-    if (c && c.length > 0 && !this.isLogged) {
+    if (c && c.length > 0) {
       this.$store.dispatch('auth/login', c);
     }
   },
