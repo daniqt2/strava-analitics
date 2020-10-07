@@ -1,12 +1,10 @@
 import moment from 'moment';
 class ActivityService {
   parseActivities(activities) {
-    console.log('aaaaaaa', activities);
     let running = [];
     let cycling = [];
     activities.forEach(act => {
       if (act.type == 'Run') {
-        console.log('RUN');
         running.push({
           distance: act.distance,
           elapsed_time: act.elapsed_time,
@@ -16,7 +14,6 @@ class ActivityService {
         });
       }
       if (act.type == 'Ride') {
-        console.log('RIDE');
         cycling.push({
           distance: act.distance,
           elapsed_time: act.elapsed_time,

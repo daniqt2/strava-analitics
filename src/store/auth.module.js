@@ -13,17 +13,14 @@ export const auth = {
   }),
   actions: {
     getActivities({ commit, state }) {
-      console.log(state.token);
       return AuthService.activities(state.token).then(res => {
         let a = ActivityService.parseActivities(res.data);
         commit('activities', a);
       });
     },
     login({ commit }, c) {
-      console.log('login auth module');
       return AuthService.login(c).then(res => {
         commit('tokenSuccess', res.data.access_token);
-        console.log('token', res.data.access_token);
       });
     }
   },
@@ -33,10 +30,7 @@ export const auth = {
       state.token = token;
     },
     activities(state, activities) {
-      console.log('guardadas');
       state.activities = activities;
-      console.log('tate.activities');
-      console.log(state.activities);
     }
   },
   getters: {

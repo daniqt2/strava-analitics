@@ -58,9 +58,7 @@ export default {
       activities: 'getActivities'
     }),
     activities() {
-      console.log('allActivities');
       const a = ActivityService.parseActivities(allActivities.activities);
-      console.log(a);
       return a;
     }
   }
