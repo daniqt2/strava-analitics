@@ -1,29 +1,34 @@
 <template>
   <div class="">
     <v-btn elevation="2" @click="getActivities"> Get you activities</v-btn>
-    <!-- {{ activities[0][0] }} -->
-    <h1>SEP</h1>
-    <!-- {{ activities[1][0] }} -->
-    <histogram
-      :chartData="activities[0]"
-      label="Running"
-      :chartColors="chartColor"
-      :options="options"
-    ></histogram>
-    <histogram
-      :chartData="activities[1]"
-      label="Bike"
-      :chartColors="chartColor"
-      :options="options"
-    ></histogram>
+    <div class="tw-mt-4" v-if="act">
+      <button
+        class="tw-mx-2 tw-button tw-bg-gray-500 tw-py-2 tw-px-4 tw-rounded tw-font-bold"
+        v-for="type in activities"
+        :key="type.name"
+        :color="graph == type.name ? 'primary' : ''"
+        @click="graph = type.name"
+      >
+        {{ type.name }}
+      </button>
+    </div>
+    <div class="tw-flex">
+      <div class="tw-w-1/2 tw-mx-auto tw-mt-5">
+        <histogram
+          :chartData="activities[graph].act"
+          :label="graph"
+          :chartColors="chartColor"
+          :options="options"
+        ></histogram>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 import histogram from './histogram';
-import allActivities from '../dummy/dummy-data';
-import ActivityService from '../services/activity.service';
+// import allActivities from '../dummy/dummy-data';
 export default {
   name: 'Login',
   props: {
@@ -37,28 +42,34 @@ export default {
         pointBackgroundColor: 'purpple',
         backgroundColor: ' 	#ffc332'
       },
+      graph: 'Ride',
       options: {}
     };
   },
   components: { histogram },
   methods: {
     getActivities() {
-      this.$store.dispatch('auth/getActivities');
+      this.$store.dispatch('activity/getActivities');
     }
   },
   mounted() {
     var url = new URL(window.location.href);
     var c = url.searchParams.get('code');
-    if (c && c.length > 0) {
+    if (c && c.length > 0 && !this.isLogged) {
       this.$store.dispatch('auth/login', c);
     }
   },
   computed: {
+    ...mapGetters('activity', {
+      act: 'getActivities'
+    }),
     ...mapGetters('auth', {
-      activities: 'getActivities'
+      isLogged: 'isLogged'
     }),
     activities() {
-      const a = ActivityService.parseActivities(allActivities.activities);
+      const a = this.act;
+      console.log(a);
+      // const a = ActivityService.parseActivities(allActivities.activities);
       return a;
     }
   }

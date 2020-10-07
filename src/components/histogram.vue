@@ -16,29 +16,42 @@ export default {
       type: Object
     }
   },
+  watch: {
+    chartData() {
+      // this._chart.destroy();
+      console.log('changed');
+      //this.renderChart(this.data, this.options);
+      this.paintChart();
+    }
+  },
   mounted() {
-    const {
-      borderColor,
-      pointBorderColor,
-      pointBackgroundColor,
-      backgroundColor
-    } = this.chartColors;
-    const dates = this.chartData.map(d => d.date).reverse();
-    const distance = this.chartData.map(d => d.distance / 1000).reverse();
-    this.renderChart({
-      labels: dates,
-      datasets: [
-        {
-          label: this.label,
-          data: distance,
-          borderColor: borderColor,
-          pointBorderColor: pointBorderColor,
-          pointBackgroundColor: pointBackgroundColor,
-          backgroundColor: backgroundColor
-        },
-        this.options
-      ]
-    });
+    this.paintChart();
+  },
+  methods: {
+    paintChart() {
+      const {
+        borderColor,
+        pointBorderColor,
+        pointBackgroundColor,
+        backgroundColor
+      } = this.chartColors;
+      const dates = this.chartData.map(d => d.date).reverse();
+      const distance = this.chartData.map(d => d.distance / 1000).reverse();
+      this.renderChart({
+        labels: dates,
+        datasets: [
+          {
+            label: this.label,
+            data: distance,
+            borderColor: borderColor,
+            pointBorderColor: pointBorderColor,
+            pointBackgroundColor: pointBackgroundColor,
+            backgroundColor: backgroundColor
+          }
+          // this.options
+        ]
+      });
+    }
   }
 };
 </script>
