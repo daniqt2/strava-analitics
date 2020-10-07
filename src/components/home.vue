@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <v-btn elevation="2" @click="getActivities"> Get you activities</v-btn>
-    <div class="tw-mt-4" v-if="act">
+    <div class="tw-mt-4" v-if="activities">
       <button
         class="tw-mx-2 tw-button tw-bg-gray-500 tw-py-2 tw-px-4 tw-rounded tw-font-bold"
         v-for="type in activities"
@@ -12,7 +12,7 @@
         {{ type.name }}
       </button>
     </div>
-    <div class="tw-flex">
+    <div class="tw-flex" v-if="activities">
       <div class="tw-w-1/2 tw-mx-auto tw-mt-5">
         <histogram
           :chartData="activities[graph].act"
@@ -42,7 +42,7 @@ export default {
         pointBackgroundColor: 'purpple',
         backgroundColor: ' 	#ffc332'
       },
-      graph: 'Ride',
+      graph: null,
       options: {}
     };
   },
@@ -68,7 +68,7 @@ export default {
     }),
     activities() {
       const a = this.act;
-      console.log(a);
+      this.graph = a[0].name;
       // const a = ActivityService.parseActivities(allActivities.activities);
       return a;
     }
