@@ -19,7 +19,6 @@ class ActivityService {
         kj: act.kilojoules
       });
     });
-    console.log(actList);
     return actList;
   }
   // parseActivitiesOriginal(activities) {

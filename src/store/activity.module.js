@@ -24,8 +24,6 @@ export const activity = {
   },
   getters: {
     getActivities(state) {
-      console.log('state.activities');
-      console.log(state.activities);
       return state.activities;
     }
   }

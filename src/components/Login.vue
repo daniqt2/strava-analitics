@@ -3,7 +3,9 @@
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
-    <v-btn elevation="2" @click="stravaLogin"> Login to strava</v-btn>
+    <v-btn elevation="2" @click="stravaLogin" v-if="!isLogged">
+      Login to strava</v-btn
+    >
   </div>
 </template>
 

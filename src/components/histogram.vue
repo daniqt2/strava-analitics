@@ -19,7 +19,6 @@ export default {
   watch: {
     chartData() {
       // this._chart.destroy();
-      console.log('changed');
       //this.renderChart(this.data, this.options);
       this.paintChart();
     }
