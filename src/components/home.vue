@@ -25,7 +25,7 @@ import histogram from './histogram';
 import allActivities from '../dummy/dummy-data';
 import ActivityService from '../services/activity.service';
 export default {
-  name: 'HelloWorld',
+  name: 'Login',
   props: {
     msg: String
   },

@@ -11,15 +11,19 @@
 <script>
 import { mapGetters } from 'vuex';
 export default {
-  name: 'HelloWorld',
+  name: 'Login',
   props: {
     msg: String
   },
   methods: {
     stravaLogin() {
+      console.log(process.env.VUE_APP_REDIRECT);
+      console.log(process.env);
       location.replace(
         'https://www.strava.com/oauth/authorize?client_id=40144' +
-          '&redirect_uri=https://stava-analisis.netlify.app/myStrava' +
+          '&redirect_uri=' +
+          process.env.VUE_APP_REDIRECT +
+          'myStrava' +
           '&response_type=code&scope=activity:read_all'
       );
     }
@@ -31,21 +35,3 @@ export default {
   }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>

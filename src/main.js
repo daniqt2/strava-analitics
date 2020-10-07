@@ -4,6 +4,7 @@ import App from './App.vue';
 import store from './store/store';
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
+import './assets/tailwind.css'
 
 Vue.config.productionTip = false;
 Vue.use(Vuetify);
