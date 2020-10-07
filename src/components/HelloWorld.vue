@@ -19,9 +19,7 @@ export default {
     stravaLogin() {
       location.replace(
         'https://www.strava.com/oauth/authorize?client_id=40144' +
-          '&redirect_uri=' +
-          window.location.origin +
-          '/myStrava' +
+          '&redirect_uri=https://stava-analisis.netlify.app/myStrava' +
           '&response_type=code&scope=activity:read_all'
       );
     }
