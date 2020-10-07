@@ -19,7 +19,9 @@ export default {
     stravaLogin() {
       location.replace(
         'https://www.strava.com/oauth/authorize?client_id=40144' +
-          '&redirect_uri=http://localhost:8080/myStrava' +
+          '&redirect_uri=' +
+          window.location.origin +
+          '/myStrava' +
           '&response_type=code&scope=activity:read_all'
       );
     }
