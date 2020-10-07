@@ -1,7 +1,7 @@
 import moment from 'moment';
 class ActivityService {
   parseActivities(activities) {
-    console.log('aaaa', activities);
+    console.log('aaaaaaa', activities);
     let running = [];
     let cycling = [];
     activities.forEach(act => {
