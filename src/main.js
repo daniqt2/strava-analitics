@@ -2,12 +2,16 @@ import Vue from 'vue';
 import router from './router';
 import App from './App.vue';
 import store from './store/store';
-import Vuetify from 'vuetify';
-import 'vuetify/dist/vuetify.min.css';
-import './assets/tailwind.css'
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
+import './styles/mainStyles.css';
+Vue.use(Antd);
+// import Vuetify from 'vuetify';
+// import 'vuetify/dist/vuetify.min.css';
+import './assets/tailwind.css';
 
 Vue.config.productionTip = false;
-Vue.use(Vuetify);
+// Vue.use(Vuetify);
 new Vue({
   router,
   store,

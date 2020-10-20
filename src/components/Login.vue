@@ -1,9 +1,6 @@
 <template>
-  <div>
-    <transition name="fade" mode="out-in">
-      <router-view></router-view>
-    </transition>
-    <v-btn elevation="2" @click="stravaLogin"> Login to strava</v-btn>
+  <div class="tw-text-center tw-bg-orange">
+    <a-button @click="stravaLogin"> Login to Strava</a-button>
   </div>
 </template>
 

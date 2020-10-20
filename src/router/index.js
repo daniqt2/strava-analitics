@@ -1,21 +1,26 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import myAccount from '../components/home.vue';
+import activities from '../components/activities.vue';
 import login from '../components/Login.vue';
+import homePage from '../components/homePage.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    redirect: '/login',
-    component: login
+    path: '/home',
+    component: homePage
+  },
+  {
+    path: '/login',
+    component: login,
+    meta: { login: true }
   },
   {
     path: '/myStrava',
     name: 'login',
-    component: myAccount
+    component: activities
   }
 ];
 

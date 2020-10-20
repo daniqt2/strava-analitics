@@ -13,6 +13,7 @@ export const auth = {
     login({ commit }, c) {
       return AuthService.login(c).then(res => {
         commit('tokenSuccess', res.data.access_token);
+        this.$store.dispatch('activity/getActivities');
       });
     }
   },

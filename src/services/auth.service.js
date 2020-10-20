@@ -25,11 +25,15 @@ class AuthService {
   }
 
   activities(token) {
-    return axios.get('https://www.strava.com/api/v3/athlete/activities?', {
-      headers: {
-        Authorization: 'Bearer ' + token
+    console.log('hola');
+    return axios.get(
+      'https://www.strava.com/api/v3/athlete/activities?&per_page=80',
+      {
+        headers: {
+          Authorization: 'Bearer ' + token
+        }
       }
-    });
+    );
   }
 }
 

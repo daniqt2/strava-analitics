@@ -1,16 +1,31 @@
 <template>
-  <div id="app">
-    <Login msg="Welcome to Your Vue.js App" />
-  </div>
+  <a-layout id="components-layout-demo-top-side-2">
+    <a-layout-header class="header">
+      <div class="logo" />
+      <p class="tw-text-white tw-text-xl">Fitics</p>
+    </a-layout-header>
+    <a-layout>
+      <Sider v-if="!isLogin"></Sider>
+      <Content></Content>
+    </a-layout>
+  </a-layout>
 </template>
 
 <script>
-import Login from './components/Login.vue';
+import Content from './components/content/mainContent.vue';
+import Sider from './components/content/sider';
 
 export default {
   name: 'App',
   components: {
-    Login
+    Content,
+    Sider
+  },
+  computed: {
+    isLogin() {
+      console.log(this.$route.meta.login);
+      return this.$route.meta.login;
+    }
   }
 };
 </script>
