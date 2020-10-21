@@ -5,7 +5,6 @@ import store from './store/store';
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
 import './styles/mainStyles.css';
-import '~antd/dist/antd.css';
 Vue.use(Antd);
 // import Vuetify from 'vuetify';
 // import 'vuetify/dist/vuetify.min.css';
