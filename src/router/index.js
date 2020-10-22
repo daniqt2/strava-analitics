@@ -20,7 +20,7 @@ const routes = [
   },
   {
     path: '/myStrava',
-    name: 'login',
+    name: 'myStrava',
     component: activities
   }
 ];
