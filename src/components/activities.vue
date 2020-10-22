@@ -7,7 +7,7 @@
     >
       {{ !act ? 'Get you activities' : 'Reload Activities' }}
     </button>
-    <div v-if="act" class="tw-text-center tw-w-1/3 tw-m-auto tw-my-4">
+    <div v-if="act" class="tw-text-center md:tw-w-1/3 tw-m-auto tw-my-4">
       <div
         :loading="loading"
         title="Activity Types"
@@ -22,7 +22,7 @@
       </div>
     </div>
     <div
-      class="tw-grid tw-grid-flow-col tw-grid-cols-auto tw-grid-rows-2 tw-gap-4 tw-justify-items-center"
+      class="tw-grid tw-grid-flow-row md:tw-grid-flow-col md:tw-grid-cols-auto md:tw-grid-rows-2 tw-gap-4 tw-justify-items-center"
       v-if="act"
     >
       <div
