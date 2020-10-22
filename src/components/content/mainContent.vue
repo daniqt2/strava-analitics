@@ -4,7 +4,7 @@
       <routerPage></routerPage>
     </a-layout-content>
     <a-layout-footer style="textAlign: center">
-      By Daniela Quesada T.
+      By Daniela Quesada T..
     </a-layout-footer>
   </a-layout>
 </template>
