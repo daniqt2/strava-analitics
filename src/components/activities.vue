@@ -1,20 +1,28 @@
 <template>
-  <div class="tw-text-center tw-justify-center">
-    <button elevation="2" @click="getActivities">
+  <div class="tw-text-center tw-justify-center tw-w-full">
+    <button
+      elevation="2"
+      @click="getActivities"
+      class="tw-bg-white tw-rounded tw-text-blue-600 tw-p-2"
+    >
       {{ !act ? 'Get you activities' : 'Reload Activities' }}
     </button>
-    <div v-if="act" class="tw-text-center tw-w-1/2 tw-m-auto tw-my-4">
-      <div :loading="loading" title="Activity Types" class="tw-bg-white">
+    <div v-if="act" class="tw-text-center tw-w-1/3 tw-m-auto tw-my-4">
+      <div
+        :loading="loading"
+        title="Activity Types"
+        class="tw-bg-white"
+        v-if="actPercent"
+      >
         <polar
           :chartData="actPercent"
           :label="graph"
           :chartColors="chartColor"
-          :options="options"
         ></polar>
       </div>
     </div>
     <div
-      class="tw-grid tw-grid-flow-col tw-grid-cols-2 tw-grid-rows-4 tw-gap-4 tw-justify-items-center"
+      class="tw-grid tw-grid-flow-col tw-grid-cols-auto tw-grid-rows-2 tw-gap-4 tw-justify-items-center"
       v-if="act"
     >
       <div
@@ -22,25 +30,25 @@
         :key="type.name"
         :title="type.name"
         type="primary"
-        class="tw-rounded tw-font-bold  tw-mt-4  tw-bg-white tw-w-64"
+        class="tw-rounded tw-font-bold tw-bg-white tw-w-64 tw-p-4"
         :color="graph == type.name ? 'primary' : ''"
         @click="graph = type.name"
       >
-        <a slot="extra" href="#">More</a>
-        <p>Activities: {{ act[type.name].act.length }}</p>
+        <p class="tw-font-bold tw-text-lg">{{ type.name }}</p>
+        <p>Total Activities: {{ act[type.name].act.length }}</p>
       </div>
     </div>
-    <histogram
+    <!-- <histogram
       :chartData="act['Run'].act"
       :index="0"
       :label="'Run'"
-    ></histogram>
+    ></histogram> -->
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-import histogram from './histogram';
+// import histogram from './histogram';
 import polar from './charts/polarArea';
 import moment from 'moment';
 export default {
@@ -54,7 +62,7 @@ export default {
       options: {}
     };
   },
-  components: { polar, histogram },
+  components: { polar },
   methods: {
     getActivities() {
       this.$store.dispatch('activity/getActivities');

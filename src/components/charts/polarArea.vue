@@ -57,11 +57,11 @@ export default {
             ]
           }
         ],
-        options: {
-          legend: {
-            display: false
-          }
-        },
+        // options: {
+        //   legend: {
+        //     display: false
+        //   }
+        // },
         labels: labels
       });
     }

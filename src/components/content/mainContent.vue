@@ -1,12 +1,15 @@
 <template>
-  <a-layout style="padding: 0 24px 24px" class="content-continer">
-    <a-layout-content class="tw-mt-4 tw-p-4">
+  <div
+    style="padding: 0 24px 24px"
+    class="content-continer tw-bg-gray-200 tw-mt-0"
+  >
+    <div class="tw-p-4">
       <routerPage></routerPage>
-    </a-layout-content>
-    <a-layout-footer style="textAlign: center">
+    </div>
+    <div style="textAlign: center">
       By Daniela Quesada T..
-    </a-layout-footer>
-  </a-layout>
+    </div>
+  </div>
 </template>
 
 <script>

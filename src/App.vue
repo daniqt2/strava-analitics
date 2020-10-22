@@ -1,13 +1,13 @@
 <template>
-  <div id="components-layout-demo-top-side-2">
-    <div class="header tw-w-full tw-bg-blue-800 tw-p-4">
+  <div id="components-layout-demo-top-side-2 tw-mb-0">
+    <div class="header tw-w-full tw-bg-blue-800 tw-p-4 tw-mb-0">
       <div class="logo" />
       <p class="tw-text-white tw-font-bold  tw-text-xl">Fitics</p>
     </div>
-    <div class="tw-h-full">
-      <!-- <Sider v-if="!isLogin"></Sider> -->
-      <Content></Content>
-    </div>
+    <!-- <div class="tw-h-full tw-bg-gray-100 tw-mt-0"> -->
+    <!-- <Sider v-if="!isLogin"></Sider> -->
+    <Content></Content>
+    <!-- </div> -->
   </div>
   <!-- <a-layout id="components-layout-demo-top-side-2">
     <a-layout-header class="header">
@@ -30,6 +30,9 @@ export default {
   components: {
     Content
     // Sider
+  },
+  mounted() {
+    this.$router.push({ name: 'login' });
   },
   computed: {
     isLogin() {
