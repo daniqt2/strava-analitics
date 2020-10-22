@@ -24,7 +24,7 @@ export default {
     this.paintChartPolar();
   },
   methods: {
-    paintChart() {
+    paintChartPolar() {
       let data = [];
       let labels = [];
       this.chartData.forEach(a => {
