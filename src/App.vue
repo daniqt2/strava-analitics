@@ -1,5 +1,15 @@
 <template>
-  <a-layout id="components-layout-demo-top-side-2">
+  <div id="components-layout-demo-top-side-2">
+    <div class="header tw-w-full tw-bg-blue-800 tw-p-4">
+      <div class="logo" />
+      <p class="tw-text-white tw-font-bold  tw-text-xl">Fitics</p>
+    </div>
+    <div class="tw-h-full">
+      <!-- <Sider v-if="!isLogin"></Sider> -->
+      <Content></Content>
+    </div>
+  </div>
+  <!-- <a-layout id="components-layout-demo-top-side-2">
     <a-layout-header class="header">
       <div class="logo" />
       <p class="tw-text-white tw-text-xl">Fitics</p>
@@ -8,18 +18,18 @@
       <Sider v-if="!isLogin"></Sider>
       <Content></Content>
     </a-layout>
-  </a-layout>
+  </a-layout> -->
 </template>
 
 <script>
 import Content from './components/content/mainContent.vue';
-import Sider from './components/content/sider';
+// import Sider from './components/content/sider';
 
 export default {
   name: 'App',
   components: {
-    Content,
-    Sider
+    Content
+    // Sider
   },
   computed: {
     isLogin() {

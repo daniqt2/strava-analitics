@@ -1,6 +1,11 @@
 <template>
   <div class="tw-text-center tw-bg-orange">
-    <a-button @click="stravaLogin"> Login to Strava</a-button>
+    <button
+      @click="stravaLogin"
+      class="tw-p-4 tw-bg-blue-800 tw-text-white tw-rounded"
+    >
+      Login to Strava
+    </button>
   </div>
 </template>
 

@@ -1,28 +1,28 @@
 <template>
-  <div class="tw-text-center">
-    <a-button elevation="2" @click="getActivities">
-      {{ !act ? 'Get you activities' : 'Reload Activities' }}</a-button
-    >
-    <div v-if="act" class="tw-text-center tw-w-1/2 tw-m-auto">
-      <a-card :loading="loading" title="Activity Types" class="tw-mt-10">
+  <div class="tw-text-center tw-justify-center">
+    <button elevation="2" @click="getActivities">
+      {{ !act ? 'Get you activities' : 'Reload Activities' }}
+    </button>
+    <div v-if="act" class="tw-text-center tw-w-1/2 tw-m-auto tw-my-4">
+      <div :loading="loading" title="Activity Types" class="tw-bg-white">
         <polarArea
           :chartData="actPercent"
           :label="graph"
           :chartColors="chartColor"
           :options="options"
         ></polarArea>
-      </a-card>
+      </div>
     </div>
     <div
-      class="tw-grid tw-grid-flow-col tw-grid-cols-2 tw-grid-rows-4 tw-gap-4"
+      class="tw-grid tw-grid-flow-col tw-grid-cols-2 tw-grid-rows-4 tw-gap-4 tw-justify-items-center"
       v-if="act"
     >
-      <a-card
+      <div
         v-for="type in act"
         :key="type.name"
         :title="type.name"
         type="primary"
-        class="tw-rounded tw-font-bold  tw-mt-4  "
+        class="tw-rounded tw-font-bold  tw-mt-4  tw-bg-white tw-w-64"
         :color="graph == type.name ? 'primary' : ''"
         @click="graph = type.name"
       >
@@ -38,7 +38,7 @@
         <!-- <div v-else>
           <p>{{ act[type.name].act[0] }}</p>
         </div> -->
-      </a-card>
+      </div>
     </div>
   </div>
 </template>
