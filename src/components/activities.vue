@@ -5,12 +5,12 @@
     </button>
     <div v-if="act" class="tw-text-center tw-w-1/2 tw-m-auto tw-my-4">
       <div :loading="loading" title="Activity Types" class="tw-bg-white">
-        <polarArea
+        <polar
           :chartData="actPercent"
           :label="graph"
           :chartColors="chartColor"
           :options="options"
-        ></polarArea>
+        ></polar>
       </div>
     </div>
     <div
@@ -28,25 +28,20 @@
       >
         <a slot="extra" href="#">More</a>
         <p>Activities: {{ act[type.name].act.length }}</p>
-        <!-- <histogram
-          v-if="act[type.name].act.length > 1"
-          :chartData="act[type.name].act"
-          :options="getOptions(type)"
-          :index="index"
-          :label="type.name"
-        ></histogram> -->
-        <!-- <div v-else>
-          <p>{{ act[type.name].act[0] }}</p>
-        </div> -->
       </div>
     </div>
+    <histogram
+      :chartData="act['Run'].act"
+      :index="0"
+      :label="'Run'"
+    ></histogram>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-// import histogram from './histogram';
-import polarArea from './charts/polarArea';
+import histogram from './histogram';
+import polar from './charts/polarArea';
 import moment from 'moment';
 export default {
   name: 'Login',
@@ -59,7 +54,7 @@ export default {
       options: {}
     };
   },
-  components: { polarArea },
+  components: { polar, histogram },
   methods: {
     getActivities() {
       this.$store.dispatch('activity/getActivities');

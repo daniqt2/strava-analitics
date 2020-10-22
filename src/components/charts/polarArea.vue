@@ -17,11 +17,11 @@ export default {
     chartData() {
       // this._chart.destroy();
       //this.renderChart(this.data, this.options);
-      this.paintChart();
+      this.paintChartPolar();
     }
   },
   mounted() {
-    this.paintChart();
+    this.paintChartPolar();
   },
   methods: {
     paintChart() {
