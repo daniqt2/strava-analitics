@@ -31,12 +31,8 @@ export default {
     Content
     // Sider
   },
-  mounted() {
-    this.$router.push({ name: 'login' });
-  },
   computed: {
     isLogin() {
-      console.log(this.$route.meta.login);
       return this.$route.meta.login;
     }
   }

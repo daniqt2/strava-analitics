@@ -3,14 +3,13 @@ import VueRouter from 'vue-router';
 
 import activities from '../components/activities.vue';
 import login from '../components/Login.vue';
-import homePage from '../components/homePage.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/home',
-    component: homePage
+    path: '/',
+    component: login
   },
   {
     path: '/login',
