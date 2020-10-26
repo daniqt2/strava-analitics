@@ -8,9 +8,6 @@ export default {
     },
     options: {
       type: Object
-    },
-    chartColors: {
-      type: Object
     }
   },
   watch: {

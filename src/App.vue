@@ -4,21 +4,14 @@
       <div class="logo" />
       <p class="tw-text-white tw-font-bold  tw-text-xl">Huachinango</p>
     </div>
-    <!-- <div class="tw-h-full tw-bg-gray-100 tw-mt-0"> -->
-    <!-- <Sider v-if="!isLogin"></Sider> -->
     <Content></Content>
-    <!-- </div> -->
+    <div
+      style="textAlign: center"
+      class="tw-fixed tw-w-full tw-bottom-0 tw-bg-blue-800 tw-text-white"
+    >
+      By Daniela Quesada T..
+    </div>
   </div>
-  <!-- <a-layout id="components-layout-demo-top-side-2">
-    <a-layout-header class="header">
-      <div class="logo" />
-      <p class="tw-text-white tw-text-xl">Fitics</p>
-    </a-layout-header>
-    <a-layout>
-      <Sider v-if="!isLogin"></Sider>
-      <Content></Content>
-    </a-layout>
-  </a-layout> -->
 </template>
 
 <script>

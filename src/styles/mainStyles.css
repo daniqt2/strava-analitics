@@ -2,3 +2,7 @@
   display: flex;
   flex-direction: column;
 }
+
+.content-continer {
+  height: 100vh !important;
+}
