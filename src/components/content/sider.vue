@@ -9,7 +9,7 @@
       <a-sub-menu key="sub1">
         <span slot="title"><a-icon type="user" />Strava</span>
         <a-menu-item key="1">
-          Activities
+          <p class="tw-font-bold">Activities</p>
         </a-menu-item>
         <a-menu-item key="2">
           Profile

@@ -33,14 +33,14 @@ export default {
           {
             data: data,
             backgroundColor: [
-              '#219ebc',
+              '#FA8620',
               '#ffb703',
-              '#264653',
-              '#f94144',
-              '#2a9d8f',
+              '#e76f51',
+              '#FC937E',
+              '#71B4F0',
               '#90be6d',
-              '#e9c46a',
-              '#fb8500',
+              '#4B9BAB',
+              '#3D437D',
               '#f4a261',
               '#e76f51',
               '#94f5ff',
@@ -49,16 +49,10 @@ export default {
               '#fec89a',
               '#023047',
               '#e07a5f',
-              '#3d405b',
-              '#'
+              '#3d405b'
             ]
           }
         ],
-        // options: {
-        //   legend: {
-        //     display: false
-        //   }
-        // },
         labels: labels
       });
     }

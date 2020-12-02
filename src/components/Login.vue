@@ -1,10 +1,15 @@
 <template>
   <div class="tw-text-center tw-bg-orange">
+    <p class="tw-text-gray-800 tw-font-bold">Connect</p>
     <button
       @click="stravaLogin"
-      class="tw-p-4 tw-bg-blue-800 tw-text-white tw-rounded"
+      class="tw-p-1 tw-bg-strava-primary tw-shadow-lg tw-rounded"
     >
-      Login to Strava
+      <img
+        width="200px"
+        class="tw-flex tw-ml-1"
+        src="../static/icons/stravaName.png"
+      />
     </button>
   </div>
 </template>

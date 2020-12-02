@@ -14,6 +14,9 @@ export default {
     },
     index: {
       type: Number
+    },
+    type: {
+      type: String
     }
   },
   watch: {
@@ -53,18 +56,16 @@ export default {
     paintChart() {
       console.log('this.indexxx', this.index);
       const dates = this.chartData.map(d => d.date).reverse();
-      const distance = this.chartData.map(d => d.distance / 1000).reverse();
-      const empty = distance.every(d => d == 0);
-      const data = empty
-        ? this.chartData.map(d => d.elapsed_time).reverse()
-        : distance;
+      if (this.type == 'd')
+        var d = this.chartData.map(d => d.elapsed_time).reverse();
+      else var d = this.chartData.map(d => d.distance / 1000).reverse();
       this.renderChart(
         {
           labels: dates,
           datasets: [
             {
               label: this.label,
-              data: data,
+              data: d,
               // borderColor: this.colors[this.index + 1],
               pointBorderColor: this.colors[this.index - 1],
               pointBackgroundColor: this.colors[this.index - 1],

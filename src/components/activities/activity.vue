@@ -1,11 +1,12 @@
 <template>
   <div class="tw-bg-transparent">
-    <p>{{ activity }}</p>
+    <h1 class="tw-text-xl tw-font-bold">{{ activity }}</h1>
     <div class="tw-my-2 tw-bg-white">
       <histogram
         :chartData="chartData.act"
         :index="0"
         :label="chartData.has_distance ? 'Distance' : 'Time'"
+        :type="chartData.has_distance ? 'd' : 't'"
         :options="getOptions(chartData)"
       ></histogram>
     </div>
@@ -24,7 +25,7 @@ export default {
       type: String
     },
     chartData: {
-      type: Array
+      type: Object
     }
   },
   components: {

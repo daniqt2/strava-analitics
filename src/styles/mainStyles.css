@@ -3,6 +3,8 @@
   flex-direction: column;
 }
 
-.content-continer {
-  height: 100vh !important;
+@media only screen and (min-width: 600px) {
+  .content-continer {
+    height: 100vh !important;
+  }
 }
