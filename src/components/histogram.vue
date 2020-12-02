@@ -54,11 +54,12 @@ export default {
   },
   methods: {
     paintChart() {
+      var d = null;
       console.log('this.indexxx', this.index);
       const dates = this.chartData.map(d => d.date).reverse();
       if (this.type == 'd')
-        var d = this.chartData.map(d => d.elapsed_time).reverse();
-      else var d = this.chartData.map(d => d.distance / 1000).reverse();
+        d = this.chartData.map(dd => dd.elapsed_time).reverse();
+      else d = this.chartData.map(dd => dd.distance / 1000).reverse();
       this.renderChart(
         {
           labels: dates,
