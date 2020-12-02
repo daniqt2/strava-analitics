@@ -55,11 +55,17 @@ export default {
   methods: {
     paintChart() {
       var d = null;
-      console.log('this.indexxx', this.index);
       const dates = this.chartData.map(d => d.date).reverse();
-      if (this.type == 'd')
+      if (this.type != 'd') {
         d = this.chartData.map(dd => dd.elapsed_time).reverse();
-      else d = this.chartData.map(dd => dd.distance / 1000).reverse();
+      } else {
+        d = this.chartData
+          .map(dd => {
+            return dd.distance / 1000;
+          })
+          .reverse();
+      }
+      this.chartData.forEach(dd => console.log(dd.distance / 10000));
       this.renderChart(
         {
           labels: dates,

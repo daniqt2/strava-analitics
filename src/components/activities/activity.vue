@@ -1,6 +1,9 @@
 <template>
   <div class="tw-bg-transparent">
     <h1 class="tw-text-xl tw-font-bold">{{ activity }}</h1>
+    <p class="tw-text-sm tw-font-bold">
+      You have {{ chartData.act.length }} activities of this kind
+    </p>
     <div class="tw-my-2 tw-bg-white">
       <histogram
         :chartData="chartData.act"
@@ -10,15 +13,17 @@
         :options="getOptions(chartData)"
       ></histogram>
     </div>
-    <div class="mt-10">
-      <p>Total Activities: {{ chartData.length }}</p>
+    <div class="tw-my-2 tw-bg-white">
+      <Table :chartData="chartData.act"></Table>
     </div>
+    <div class="mt-10"></div>
   </div>
 </template>
 
 <script>
 import histogram from '../histogram';
 import moment from 'moment';
+import Table from './table.vue';
 export default {
   props: {
     activity: {
@@ -29,7 +34,8 @@ export default {
     }
   },
   components: {
-    histogram
+    histogram,
+    Table
   },
   methods: {
     getOptions(metric) {

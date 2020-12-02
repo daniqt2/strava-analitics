@@ -43,13 +43,14 @@
         class="tw-text-center md:tw-w-1/2 tw-m-auto tw-my-4"
       >
         <div>
-          <p>This is your activity summary</p>
-          <polar
-            class="tw-bg-white"
-            :chartData="actPercent"
-            :label="graph"
-            v-if="!selected"
-          ></polar>
+          <div v-if="!selected">
+            <p>This is your activity summary</p>
+            <polar
+              class="tw-bg-white"
+              :chartData="actPercent"
+              :label="graph"
+            ></polar>
+          </div>
           <activity
             v-else
             :activity="selected"
